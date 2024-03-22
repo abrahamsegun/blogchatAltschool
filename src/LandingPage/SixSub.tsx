@@ -22,8 +22,9 @@ const SixSub :React.FC= () => {
             height:screenWidth<=1200?"auto":"402px",
             backgroundColor:"rgba(255, 237, 204, 0.5)",
             textAlign:screenWidth<=1200?"center":"none",
-            display: screenWidth<=1200?"none":"flex",
+            display: screenWidth<=1200?"block":"flex",
             justifyContent:"space-between",
+           paddingInline:"auto",
             paddingBlock:screenWidth<= 600?"2rem":screenWidth<1200?"2.2rem":"2.5rem"
           }}
       >
@@ -36,7 +37,7 @@ const SixSub :React.FC= () => {
          </Box>
          <Box sx={{
             display:screenWidth<=1200?"block":"flex", 
-            width:"70%",
+            width:"100%",
             justifyContent:"space-around"
 
          }}

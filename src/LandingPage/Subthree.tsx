@@ -23,7 +23,9 @@ const Subthree :React.FC= () => {
           color:"#111111"
       }
   return (
-    <div style={{}}>
+    <div style={{
+      marginInline:"auto"
+    }}>
       <Box
         sx={{
   width: screenWidth<=600?"80%":screenWidth<=1200?"90%":"75%", marginBlock:screenWidth<=1000?"25px":"40px", marginInline:"auto"
@@ -51,14 +53,14 @@ const Subthree :React.FC= () => {
               }}>
                 <Box 
                 sx={{
-                    width: screenWidth<=600?"50%":screenWidth<=1200?"300px":"400px",
+                    width: screenWidth<=600?"100%":screenWidth<=1200?"300px":"400px",
                     minHeight:screenWidth<=900?"250px":"324px",
                     marginBottom:screenWidth<1000?"80px":"0"
                     
                 }}>
                     <div
                      style={{
-                        width:screenWidth<=600?"75px":screenWidth<=1200?"80px":"92px", height:screenWidth<=600?"75px":screenWidth<=1200?"80px":"88px", backgroundColor:" rgba(214, 209, 248, 0.2)",
+                        width:screenWidth<=600?"75px":screenWidth<=1200?"80px":"92px", height:screenWidth<=600?"75px":screenWidth<=1200?"80px":"88px", backgroundColor:" rgba(214, 209, 248, 0.2)",marginInline:"auto",
                         borderRadius:"50%", display:"flex", alignItems:"center", justifyContent:"center"
     
                     }}
@@ -79,14 +81,14 @@ const Subthree :React.FC= () => {
                 </Box>
                 <Box
                  sx={{
-                  width: screenWidth<=600?"50%":screenWidth<=1200?"300px":"400px",
+                  width: screenWidth<=600?"100%":screenWidth<=1200?"300px":"400px",
                   minHeight:screenWidth<=900?"250px":"324px",
                   marginBottom:screenWidth<1000?"80px":"0"
                 }}>
                 <div
                  style={{
                     width:screenWidth<=600?"75px":screenWidth<=1200?"80px":"92px", height:screenWidth<=600?"75px":screenWidth<=1200?"80px":"88px", backgroundColor:" rgba(214, 209, 248, 0.2)",
-                    borderRadius:"50%", display:"flex", alignItems:"center", justifyContent:"center"
+                    borderRadius:"50%", display:"flex", alignItems:"center", justifyContent:"center", marginInline:"auto"
 
                 }}
                 >
@@ -112,14 +114,14 @@ const Subthree :React.FC= () => {
                 </Box>
                 <Box
                  sx={{
-                  width: screenWidth<=600?"50%":screenWidth<=1200?"300px":"400px",
+                  width: screenWidth<=600?"100%":screenWidth<=1200?"300px":"400px",
                   minHeight:screenWidth<=900?"250px":"324px",
                   marginBottom:screenWidth<1000?"80px":"0"
                 }}>
                 <div 
                 style={{
                     width:screenWidth<=600?"75px":screenWidth<=1200?"80px":"92px", height:screenWidth<=600?"75px":screenWidth<=1200?"80px":"88px", backgroundColor:" rgba(214, 209, 248, 0.2)",
-                    borderRadius:"50%", display:"flex", alignItems:"center", justifyContent:"center"
+                    borderRadius:"50%", display:"flex", alignItems:"center", justifyContent:"center", marginInline:"auto"
 
                 }}
                 >

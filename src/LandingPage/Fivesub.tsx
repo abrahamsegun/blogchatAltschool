@@ -48,7 +48,11 @@ const Fivesub :React.FC= () => {
             marginBlock:screenWidth<= 600?"1.5rem":screenWidth<=1000?"2rem":"2.3rem"
         }
   return (
-    <div>
+    <div 
+    
+    style={{
+        marginInline:"auto",
+    }}>
         <Box
         sx={{
             height:screenWidth<600?"400px":screenWidth<=1200?"450px":"532px",

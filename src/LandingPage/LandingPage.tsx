@@ -16,7 +16,8 @@ const LandingPage :React.FC= () => {
     width:{
       lg:"1440px"
     },
-    margin:"0 auto"
+    margin:"0 auto",
+    minHeiight:"max-content"
   }
   return (
     <Box sx={Main}>

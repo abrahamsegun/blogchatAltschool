@@ -50,7 +50,7 @@ const SubFour :React.FC= () => {
   return (
     <div>
       <Box sx={{width:screenWidth<1000?"100%":"85%", backgroundColor:"rgba(255, 237, 204, 0.5)",
-      paddingBlock:screenWidth<= 600?"2rem":screenWidth<1200?"2.2rem":"2.5rem"
+      paddingBlock:screenWidth<= 600?"2rem":screenWidth<1200?"2.2rem":"2.5rem", marginInline:"auto"
     }}>
           <Box sx=
           {{
