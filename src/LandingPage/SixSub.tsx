@@ -19,7 +19,7 @@ const SixSub :React.FC= () => {
       <Box 
           sx={{
             width:"100%",
-            height:screenWidth<=1200?"auto":"402px",
+            height:screenWidth<=1200?"max-content":"402px",
             backgroundColor:"rgba(255, 237, 204, 0.5)",
             textAlign:screenWidth<=1200?"center":"none",
             display: screenWidth<=1200?"block":"flex",
