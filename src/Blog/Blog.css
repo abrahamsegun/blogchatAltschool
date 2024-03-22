@@ -1,0 +1,29 @@
+.ql-toolbar.ql-snow + .ql-container.ql-snow  {
+    font-size: 16px !important;
+    height:"400px" !important;
+    
+  }
+.ql-blank{
+  height:"200px" !important;
+}
+.ql-editor {
+  min-height: 300px;  
+  height: auto;
+  overflow-y: auto;
+}
+  
+
+  @media only screen and (min-width: 450px) {
+
+      
+  }
+  @media only screen and (min-width: 600px) {
+
+  }
+
+  @media only screen and (min-width: 900px) {
+
+  }
+  @media only screen and (min-width: 1100px) {
+   
+  }

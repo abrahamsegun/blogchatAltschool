@@ -1,0 +1,35 @@
+
+.not-found {
+    text-align: center;
+    margin-top: 100px;
+  }
+  
+  .not-found h3 {
+    font-size: 24px;
+    color: #FF5733;
+  }
+  
+  .not-found p {
+    font-size: 20px;
+  }
+  button{
+    background:#ff6347 ;
+   border-radius: 4%;
+    padding: 10px 20px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+
+  }
+  .found{
+border: 1px red solid;
+width: 100%;
+font-size: 30px;
+text-align: center;
+height: 300px;
+display: flex;
+gap: 40px;
+flex-direction: column;
+justify-content: space-around;
+margin: 15px;
+  }
