@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import { LandingPage, Login,Signup , Blog, IndividualBlogPost, DisplayDashborad, Account, NotFound} from '../Default';
 import BookMarked from '../Page/Dash/Book/BookMarked';
 import Comment from '../Blog/Analytic/Comment';
-// import BlogPost from '../Blog/BlogPost';
+import ProtectedRoute from '../Auth/ProtectedRoute';
 
 
 
@@ -14,7 +14,7 @@ const Root:React.FC = () => {
               <Route path='/' element={<LandingPage />}></Route>
               <Route path="signup" element={<Signup />}></Route>
               <Route path="login" element={<Login />}></Route>
-              <Route path='/dashboard' element={<DisplayDashborad />}></Route>
+              <Route path='/dashboard' element={<ProtectedRoute><DisplayDashborad /></ProtectedRoute>}></Route>
               <Route path="admin/blog" element={<Blog />}></Route>
               <Route path="bookmarks" element={<BookMarked></BookMarked>} />
               <Route path="/blogs/:postId" element={<IndividualBlogPost />} />
