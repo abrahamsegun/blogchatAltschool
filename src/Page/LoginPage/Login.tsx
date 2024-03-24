@@ -8,8 +8,8 @@ import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import { useNavigate} from 'react-router-dom';
 import { useStore } from '../../ZustandStore/StoreZusatnd';
-import { Auth, googleSignin} from '../../Auth/Auth';
-
+import { Auth} from '../../Auth/Auth';
+import { UserAuth } from '../../Auth/Context';
 
 
 
@@ -23,6 +23,7 @@ const Login :React.FC= () => {
   const [showPassword, setShowPassword] = useState(false);
   const [EmailError, setEmailError] = useState<boolean>(false)
   const [PasswordError, setPasswordError]=useState<boolean>(false);
+  const {googleSignin, user}= UserAuth()
 
   useEffect(() => {
     const handleResize = () => {
@@ -119,10 +120,16 @@ const Login :React.FC= () => {
   const handleGoogleSignIn = async () => {
     try {
       await googleSignin();
+
     } catch (error: any) {
       alert('Error signing in with Google: ' + error.message);
     }
   };
+  useEffect(()=>{
+    if(user!== null){
+     navigate("/dashboard")
+    }
+     }, [user])
 
 
   const loginMain = {

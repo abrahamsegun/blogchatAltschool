@@ -135,7 +135,7 @@ const Dashboard :React.FC= () => {
 const logout={
     color:"red",
     fontSize:screenWidth <= 900  ? "17px" :"19px",
-    fontFamily:"DM SANS",
+    fontFamily:"DM SANS", cursor:"pointer"
 }
        const feed2 ={
         display:"flex",
@@ -145,11 +145,15 @@ const logout={
         fontWeight:"400"
         
        }
-       const IDEA = {
-        fontSize: "16px",
-        fontStyle: "italic",
-        marginBlock: screenWidth <= 900 ? "5px" : "8px"
-      };
+       const feed3 ={
+        display:"flex",
+        justifyContent:"space-between",
+        alignItems:"center",
+        fontFamily:"DM SANS",
+        fontWeight:"600"
+        
+       }
+
       const Blog={
         heigth: "auto"
 
@@ -198,7 +202,9 @@ const logout={
                 <Typography sx={{fontSize:screenWidth <= 900  ? "19px" :"22px",fontFamily:"DM SANS" }}>FEED</Typography>
                 <button onClick={writeaBlog} style={{fontSize:screenWidth <= 900  ? "16px" :"18px",border:"none", width:screenWidth <= 900  ? "120px" :"170px", cursor:"pointer", padding:screenWidth <= 900  ? "5px" :"8px",fontFamily:"DM SANS"  }}>Write a blog</button>
             </Box>
-            <Box sx={IDEA}>Show that <span style={{fontWeight:"600"}}>Idea</span> to the world</Box>
+            <Box margin={1}
+            sx={{ width:"100%", display:"flex", justifyContent:"flex-end"         }}><Typography sx={feed3}
+            ><Typography component="span" sx={{fontFamily:"DM Sans", fontWeight:"400", marginRight:".2rem"}}>Welcome,  </Typography> {presentUser[0]?.displayName?.toUpperCase()}</Typography></Box>
             <Box sx={Blog}>
               <BlogPage></BlogPage>
             </Box>

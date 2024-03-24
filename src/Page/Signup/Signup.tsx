@@ -12,7 +12,7 @@ import RegisterPic from '../../assets/Photo/womanwriting.jpg';
 import { createUserWithEmailAndPassword, UserCredential, updateProfile } from 'firebase/auth';
 import { collection, setDoc, getDocs,doc } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
-import { Auth, googleSignin, db } from '../../Auth/Auth';
+import { Auth, db } from '../../Auth/Auth';
 import { useStore } from '../../ZustandStore/StoreZusatnd';
 import { v4 as uuidv4 } from "uuid"
 declare module 'firebase/auth' {
@@ -20,6 +20,7 @@ declare module 'firebase/auth' {
     updateProfile(profile: { displayName?: string | null; photoURL?: string | null }): Promise<void>;
   }
 }
+import { UserAuth } from '../../Auth/Context';
 
 const Signup: React.FC = () => {
   const { User, setFirstName, setLastName, setEmail, setPassword, setConfirmPassword, setHasAdminPower, setIsReader, setDocId } = useStore();
@@ -34,6 +35,7 @@ const Signup: React.FC = () => {
     color: 'black'
   });
   const [showPassword, setShowPassword] = useState(false);
+const {googleSignin, user}= UserAuth()
 
   useEffect(() => {
     const handleResize = () => {
@@ -222,10 +224,21 @@ const Signup: React.FC = () => {
   const handleGoogleSignIn = async () => {
     try {
       await googleSignin();
+     
+
     } catch (error: any) {
+      // Handle any errors that occur during sign-in
       alert('Error signing in with Google: ' + error.message);
     }
   };
+
+  useEffect(()=>{
+ if(user!== null){
+
+  navigate("/dashboard")
+ }
+  }, [user])
+ 
   useEffect(() => {
     const handleResize = () => {
       setScreenWidth(window.innerWidth);
@@ -293,6 +306,7 @@ const Signup: React.FC = () => {
 
   return (
     <Box sx={{ backgroundColor: 'rgb(248, 250, 252)',}}>
+       
       <Box>
         <Box sx={Registermain} maxWidth="xl">
           <Box
@@ -464,6 +478,8 @@ const Signup: React.FC = () => {
           </Box>
         </Box>
       </Box>
+  
+      
     </Box>
   );
 };

@@ -22,7 +22,7 @@ const LikePage: React.FC<Props> = ({ postId, likes }) => {
         updateDoc(likesRef, { likes: updatedLikes })
             .then(() => {
                 setIsLiked(!isLiked); // Toggle like status optimistically
-                console.log("Like updated successfully.");
+
             })
             .catch((error) => {
                 console.error("Error updating like:", error);

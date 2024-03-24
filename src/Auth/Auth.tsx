@@ -25,8 +25,22 @@ export const storage = getStorage(app);
 export const db = getFirestore(app);
 export const  googleSignin =async() => {
     return await signInWithPopup(Auth, Provider).then((result) => {
-      console.log(result);
-      }).catch((error) => {console.log(error)})}
+       GoogleAuthProvider.credentialFromResult(result);
+
+      
+      return true
+
+      }).catch((error) => {
+          // Handle Errors here.
+    console.error( error.code);
+  console.error(error.message);
+    // The email of the user's account used.
+   console.error( error.customData.email);
+    // The AuthCredential type that was used.
+    console.error(GoogleAuthProvider.credentialFromError(error));
+
+      return false
+      })}
 
 
 
