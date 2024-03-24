@@ -110,7 +110,10 @@ const BlogPage: React.FC = () => {
                  <img src={coverImageUrl} alt={coverImageUrl} style={{width:"100%", height:"100%"}}></img>
                  </Box>
                  {/* Displaying only the first 40 words */}
-                 <div>{content.split(' ').slice(0, 40).join(' ')}{content.split(' ').length > 40 ? '...' : ''}</div>
+                 <div><p style={{wordWrap:"break-word"}}>
+                  {content.split(' ').slice(0, 40).join(' ')}{content.split(' ').length > 40 ? '...' : ''}                  
+                  </p>
+                  </div>
                  <div style={{ display: 'flex', justifyContent: "flex-end" }}>
                    <LikePage postId={id} likes={likes} />
                    <div style={{ paddingRight: "10px" }}>
