@@ -4,6 +4,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { BlogPage } from '../../Default';
 import CloseIcon from '@mui/icons-material/Close';
 import { useNavigate } from 'react-router-dom';
+import { getAuth, signOut } from "firebase/auth";
+const auth = getAuth();
 
 const MobileDash: React.FC = () => {
   const [screenWidth, setScreenWidth] = useState<number>(window.innerWidth);
@@ -32,7 +34,13 @@ const MobileDash: React.FC = () => {
   const writeaBlog=()=>{
     navigate("/admin/blog");
   }
-
+  const handlelogout=()=>{
+    signOut(auth).then(() => {
+      navigate("/");
+     }).catch((error:any) => {
+       console.error(error.message)
+     });
+  }
   useEffect(() => {
     const handleSize = () => {
       setScreenWidth(window.innerWidth);
@@ -75,6 +83,7 @@ const MobileDash: React.FC = () => {
             <Typography sx={{fontSize:screenWidth<420?"18px":"20px", fontFamily:"DANS SANS", fontWeight:"600", color:"darkblue",cursor:"pointer", "hover":{padding:"4px", backgroundColor:"blue", color:"white"}}} onClick={handleblog}>Blogs</Typography>
             <Typography sx={{fontSize:screenWidth<420?"18px":"20px", fontFamily:"DANS SANS", fontWeight:"600", color:"darkblue",cursor:"pointer", "hover":{padding:"4px", backgroundColor:"blue", color:"white"}}} onClick={handlebook}>Bookmarks</Typography>
             <Typography sx={{fontSize:screenWidth<420?"18px":"20px", fontFamily:"DANS SANS", fontWeight:"600", color:"darkblue",cursor:"pointer", "hover":{padding:"4px", backgroundColor:"blue", color:"white"}}} onClick={handleAcc}>Account</Typography>
+            <Typography sx={{fontSize:screenWidth<420?"18px":"20px", fontFamily:"DANS SANS", fontWeight:"600", color:"darkblue",cursor:"pointer", "hover":{padding:"4px", backgroundColor:"blue", color:"white"}}} onClick={handlelogout}>Log out</Typography>
           </Box>
         </Box>
       )}
